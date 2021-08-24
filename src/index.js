@@ -1,5 +1,5 @@
-import Sum from './some'
-let add = (a, b) => a + b;
+import './js/common.js';
+import './css/main.css';
+import './scss/main.scss';
 
-console.log(Sum())
-console.log(add(1+2))
+window.Vue = require('vue');
