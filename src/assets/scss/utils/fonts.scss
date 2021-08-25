@@ -1,0 +1,10 @@
+// Fonts here
+
+@font-face {
+  font-family: "RobotoCondensed-Bold";
+  src: url('/assets/fonts/RobotoCondensed-Bold.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/RobotoCondensed-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/RobotoCondensed-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/fonts/RobotoCondensed-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       //  url('/assets/fonts/HelveticaNeueCyr/Black/RobotoCondensed-Bold.svg') format('svg'); /* Legacy iOS */
+}

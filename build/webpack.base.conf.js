@@ -16,7 +16,7 @@ module.exports = {
   },
   entry: {
     app: PATHS.src,
-    extract: `${PATHS.src}/extract.js`
+    extract: `${PATHS.src}/extract.js`,
   },
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
@@ -30,10 +30,10 @@ module.exports = {
           name: 'vendors',
           test: /node_modules/,
           chunks: 'all',
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -59,6 +59,13 @@ module.exports = {
         },
       },
       {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        },
+      },
+      {
         test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
@@ -67,7 +74,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              config: { path: `${PATHS.src}/js/postcss.config.js` },
+              config: { path: `./postcss.config.js` },
             },
           },
         ],
@@ -85,7 +92,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              config: { path: `${PATHS.src}/js/postcss.config.js` },
+              config: { path: `./postcss.config.js` },
             },
           },
           {
@@ -98,6 +105,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      '~': 'src',
       vue$: 'vue/dist/vue.js',
     },
   },
@@ -106,7 +114,8 @@ module.exports = {
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
     new CopyWebpackPlugin([
-      { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
+      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
     new HtmlWebpackPlugin({
