@@ -22,5 +22,6 @@ export default {
 <style lang="scss" scoped>
 h1 {
   color: green;
+  text-align: center;
 }
 </style>
