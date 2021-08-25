@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container">
-      <h1>Vue message: {{ message }}</h1>
+      <h1>{{ message }}</h1>
     </div>
   </section>
 </template>
@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 h1 {
-  color: green;
+  color: #41b883;
   text-align: center;
 }
 </style>

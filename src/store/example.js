@@ -1,6 +1,6 @@
 export default {
   state: {
-    message: 'hello Vuex',
+    message: 'Example Vue component',
   },
   mutations: {},
   actions: {},
